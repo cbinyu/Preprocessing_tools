@@ -1,0 +1,74 @@
+{
+  "extract": [
+    {
+      "step": "classification",
+      "repository": "cbinyu/heudiconv",
+      "version": "v2.5",
+      "options": "-c none --heuristic /data/CBI/heuristics/cbi_heuristic.py --bids --overwrite"
+    },
+    {
+      "step": "conversion",
+      "repository": "cbinyu/heudiconv",
+      "version": "v2.5",
+      "options": "-c dcm2niix --heuristic /data/CBI/heuristics/cbi_heuristic.py --bids --overwrite"
+    },
+    {
+      "step": "validation",
+      "repository": "bids/validator",
+      "version": "1.2.1",
+      "options": ""
+    }
+  ],
+  "deface": [
+    {
+      "step": "deface",
+      "repository": "cbinyu/bids_pydeface",
+      "version": "v1.0",
+      "options": ""
+    }
+  ],
+  "mriqc": [
+    {
+      "step": "participant",
+      "repository": "cbinyu/mriqc",
+      "version": "0.14.2-cbi1",
+      "options": "participant --verbose-reports --ica --fft-spikes-detector"
+    },
+    {
+      "step": "group",
+      "repository": "cbinyu/mriqc",
+      "version": "0.14.2-cbi1",
+      "options": "group"
+    }
+  ],
+  "HCP_Pipelines": [
+    {
+      "step": "anatomy",
+      "repository": "cbinyu/pipelines",
+      "version": "v3.4",
+      "options": ""
+    },
+    {
+      "step": "functional",
+      "repository": "cbinyu/pipelines",
+      "version": "v3.4",
+      "options": ""
+    }
+  ],
+  "BIDS_HCP_Pipelines": [
+    {
+      "step": "participant",
+      "repository": "cbinyu/bids_hcppipelines",
+      "version": "v3.17.0-18",
+      "options": "participant"
+    }
+  ],
+  "fMRIPrep": [
+    {
+      "step": "participant",
+      "repository": "poldracklab/fmriprep",
+      "version": "1.3.1",
+      "options": "participant --output-space T1w template fsaverage5 --template-resampling-grid native --t2s-coreg"
+    }
+  ]
+}
