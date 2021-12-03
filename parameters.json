@@ -65,10 +65,16 @@
   ],
   "fMRIPrep": [
     {
-      "step": "participant",
-      "repository": "poldracklab/fmriprep",
-      "version": "1.3.1",
-      "options": "participant --output-space T1w template fsaverage5 --template-resampling-grid native --t2s-coreg"
+      "step": "anatomical",
+      "repository": "nipreps/fmriprep",
+      "version": "20.2.5",
+      "options": "participant --output-spaces MNI152NLin2009cAsym"
+    },
+    {
+      "step": "functional",
+      "repository": "nipreps/fmriprep",
+      "version": "20.2.5",
+      "options": "participant --output-spaces MNI152NLin2009cAsym"
     }
   ]
 }
